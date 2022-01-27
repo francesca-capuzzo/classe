@@ -159,3 +159,30 @@ function filterGreater100(array) {
 }
 
 console.log(filterGreater100(arraynumbers));
+
+
+function greaterThan30(number) {
+    if (number >= 30) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+function filter(func) {
+    let newArray9 = [];
+    for (let i = 0; i < arraynumbers.length; i++) {
+        greaterThan30(arraynumbers[i]) ? "not what i want" : newArray9.push(arraynumbers[i]);
+    }
+    return newArray9;
+}
+
+console.log(filter(greaterThan30(arraynumbers)));
+
+////////  NON SO PERCHE' VENGA GIUSTA!!!!!  ///////////////////
+
+
+
+
+
