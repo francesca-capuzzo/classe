@@ -143,3 +143,19 @@ function cleanArray(type) {
 
 console.log(cleanArray("boolean"));
 
+///////////////////////////////////////////////////////////////////////
+
+let arraynumbers = [100, 101, 9, 1000, 12, -3];
+
+function filterGreater100(array) {
+    let newArray2 = [];
+    for (let i = 0; i < arraynumbers.length; i++) {
+        if (arraynumbers[i] <= 100) {
+            newArray2.push(arraynumbers[i]);
+        }
+        
+    }
+    return newArray2;
+}
+
+console.log(filterGreater100(arraynumbers));
