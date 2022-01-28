@@ -70,6 +70,40 @@ function filtraEtà(età) {
     return arrayEtà;
 }
 
+/////////////////////////////////////////////IN CLASSE:
+
+// function filtraEtà(età) {
+//     let arrayEtà = [];
+//     for (const studente of studenti) {
+//         if (studente.età === età) {
+//             arrayEtà.push(studente)
+//         }
+//     }
+//     return arrayEtà;
+// }
+
+
+
+////OPPURE: (con in modo più generico a cui passo l'array da filtrare)
+
+
+
+// function filtraEtà(arrayToFilter, età) {
+//     let arrayEtà = [];
+//     for (const element of arrayToFilter) {
+//         if (studente.età === età) {
+//             arrayEtà.push(studente)
+//         }
+//     }
+//     return arrayEtà;
+// }
+
+// console.log(filtraEtà(studenti, 25));
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
 
 function filtraSesso(sesso) {
     let arraySesso = [];
@@ -94,12 +128,32 @@ function filtra(proprietà, valore) {
     return arrayTotale;
 }
 
+
+
+/////////////////////////////////////////////////////IN CLASSE:
+//FUNZIONE GENERICA:
+
+// function filtra(arrayToFilter, propertyName, value) {
+//     let tempArray = [];
+//     for (const element of arrayToFilter) {
+//         if (element[propertyName] === value){
+//             tempArray.push(element)
+
+//         }
+//     }
+//     return arrayEtà;
+// }
+
+// console.log(filter(studenti, "nome", "Francesca"));
+
+
+
 console.log(filtraEtà(20));
 console.log(filtraSesso("M"));
 console.log(filtra("sesso", "M"));
 
 
-// ////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 
 let array = [1, 5, 7];
@@ -118,7 +172,25 @@ function aggiungiAdArray(array, elemento) {
 console.log(aggiungiAdArray(array, 4));
 
 
+
+///////////////////////////////////////////////////IN CLASSE:
+
+
+// let array = [1, 5, 7];
+
+// function aggiungiAdArray(array, elemento) {
+//         if (typeof elemento === array[0]) {                         //controlla solo il primo elemento dell'array confidando che gli altri elementi siano tutti dello stesso tipo
+//             array.push(elemento);
+//             return array;
+//         }
+//         return "ERRORE TIPO"
+//     }
+
+// console.log(aggiungiAdArray(array, 4));
+
 ////////////////////////////////////////////////////////////////////
+
+
 
 let array1 = [
     1,
@@ -142,6 +214,24 @@ function cleanArray(type) {
 }
 
 console.log(cleanArray("boolean"));
+
+
+
+///////////////////////////////////////////////////////////////IN CLASSE:
+
+// function cleanArray(arrayToClean, type) {
+//     let newArray = [];
+
+//     for (const elemento of arrayToClean) {
+//         if (typeof elemento === type) {
+//             newArray.push(elemento);
+//         }
+//        return newArray;
+//    }
+
+// console.log(cleanArray(array1, "boolean"));
+
+
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -185,5 +275,80 @@ console.log(filter(greaterThan30(arraynumbers)));
 
 
 
+/////////////////////////////////////IN CLASSE:
+
+// let myArray = [100, 101, 9, 1000, 12, -3];
+
+// function filterToRemoveGreaterThan100(arrayToFilter) {
+//     let tempArray = [];
+//     for (const element of arrayToFilter) {
+//         if (element <= 100) {
+//             tempArray.push(element);
+//         }
+//     }
+//     return tempArray;
+// }
+
+// console.log(filterToRemoveGreaterThan100(myArray));
 
 
+// function greaterThan30(element) {                        //funzione di filtraggio che verifica la condizione posta.
+//     if (element > 30) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+//RISCRIVO GREATER THAN 30 IN MANIERA PIù CORRETTA:
+
+// function greaterThan30(element) {                     //prende element e lo confronta con la condizione e ritorna true se è vera e false se è falsa, senza bisogno dell'IF!!
+//     return (element > 30);
+// }
+
+
+// function filter(arrayToFilter, filterFunction) {
+//     let tempArray = [];
+//     for (const element of arrayToFilter) {
+//         if (filterFunction(element)) {
+//             tempArray.push(element)
+//         }
+//     }
+//     return tempArray;
+// }
+
+// console.log(filter(myArray, greaterThan30));
+
+// //NB: LA CONDIZIONE DELL'IF è L'UNICA COSA CHE CAMBIA IN TUTTI I CICLI E METODI DI TUTTI GLI ESERCIZI IN QUESTA PAGINA!!!
+
+
+
+// function isEven(element) {
+//     if (element % 2 === 0) {
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
+
+// //oppure in versione più corta (e sensata):
+
+// function isEven(element) {
+//    return (element % 2 === 0)
+// }
+
+
+
+
+// //se la passo alla funzione di filtraggio generica (filter):
+
+console.log("mia filter function", filter(myArray, isEven));
+
+console.log("Javascript filter function", myArray.filter(isEven));
+
+
+function isPositive(element) {
+    return (element > 0);
+}
+
+console.log("isPositive filter", myArray.filter(isPositive));
