@@ -153,7 +153,6 @@ function filterGreater100(array) {
         if (arraynumbers[i] <= 100) {
             newArray2.push(arraynumbers[i]);
         }
-        
     }
     return newArray2;
 }
@@ -171,9 +170,11 @@ function greaterThan30(number) {
 
 
 function filter(func) {
-    let newArray9 = [];
+    let newArray9 = []; //more than 30
+    let newArray8 = []; //less than 30
     for (let i = 0; i < arraynumbers.length; i++) {
-        greaterThan30(arraynumbers[i]) ? "not what i want" : newArray9.push(arraynumbers[i]);
+        greaterThan30(arraynumbers[i]) ? newArray8.push(arraynumbers[i]) : newArray9.push(arraynumbers[i]);
+        // greaterThan30(arraynumbers[i]) ? "not what i want" : newArray9.push(arraynumbers[i]);
     }
     return newArray9;
 }
